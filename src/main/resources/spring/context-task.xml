@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
+        
+        
+    <!-- 线程执行器配置，用于任务注册 -->
+	<!-- <bean id="executor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+	 <property name="corePoolSize" value="10" />
+	 <property name="maxPoolSize" value="100" />
+	 <property name="queueCapacity" value="500" />
+	</bean> -->
+	
+	<!-- 业务对象 -->
+	<!-- <bean id="accessTokenUpdateObject" class="com.cx.tg.service.thread.GznumberThreadService" /> -->
+	
+	<!-- 调度业务 -->
+	<!-- <bean id="accessTokenUpdateDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	 <property name="targetObject" ref="accessTokenUpdateObject" />
+	 <property name="targetMethod" value="accessTokenUpdate" />
+	</bean> -->
+	
+	<!-- 调度触发器 -->
+	<!-- <bean id="cronTrigger_accessTokenUpdate" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+	 <property name="jobDetail" ref="accessTokenUpdateDetail" />
+	 <property name="cronExpression" value="0 0/59 * * * ?" /> 每59分钟执行
+	</bean> -->
+	
+	<!-- 设置调度 -->
+	<!-- <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	 <property name="triggers">
+	  <list>
+	   <ref bean="cronTrigger_accessTokenUpdate" />
+	   <ref bean="cronTrigger_getGzUsers" />
+	  </list>
+	 </property>
+	 <property name="taskExecutor" ref="executor" />
+	</bean> -->
+    
+</beans>
